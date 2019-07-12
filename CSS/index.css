@@ -5,28 +5,36 @@
   border-bottom: 1px solid lightgrey;
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: italic;
   font-weight: 400;
-  src: local('PT Sans Italic'), local('PTSans-Italic'), url(https://fonts.gstatic.com/s/ptsans/v10/jizYRExUiTo99u79D0e0x8mN.ttf) format('truetype');
+  src: local("PT Sans Italic"), local("PTSans-Italic"),
+    url(https://fonts.gstatic.com/s/ptsans/v10/jizYRExUiTo99u79D0e0x8mN.ttf)
+      format("truetype");
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: italic;
   font-weight: 700;
-  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(https://fonts.gstatic.com/s/ptsans/v10/jizdRExUiTo99u79D0e8fOydLxUY.ttf) format('truetype');
+  src: local("PT Sans Bold Italic"), local("PTSans-BoldItalic"),
+    url(https://fonts.gstatic.com/s/ptsans/v10/jizdRExUiTo99u79D0e8fOydLxUY.ttf)
+      format("truetype");
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0KEwA.ttf) format('truetype');
+  src: local("PT Sans"), local("PTSans-Regular"),
+    url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0KEwA.ttf)
+      format("truetype");
 }
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v10/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
+  src: local("PT Sans Bold"), local("PTSans-Bold"),
+    url(https://fonts.gstatic.com/s/ptsans/v10/jizfRExUiTo99u79B_mh0O6tKA.ttf)
+      format("truetype");
 }
 * {
   box-sizing: border-box;
@@ -43,7 +51,7 @@ body {
   flex-direction: column;
   background-color: #f1f1f1;
   color: #333;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 .top-bar {
   width: 100%;
@@ -226,6 +234,7 @@ body {
   width: 380px;
   margin-bottom: 16px;
   padding: 24px;
+  animation: fadeIn 1s;
 }
 .cards-container .card .headline {
   font-size: 25px;
@@ -293,6 +302,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 10;
 }
 .carousel .right-button {
   top: 50%;
@@ -302,4 +312,14 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
