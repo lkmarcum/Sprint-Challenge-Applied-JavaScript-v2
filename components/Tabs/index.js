@@ -34,6 +34,9 @@ function createTab(topic) {
 
   // set content
   madeTab.textContent = topic;
+  madeTab.setAttribute("data-tab", topic);
+
+  console.log(madeTab);
 
   return madeTab;
 }

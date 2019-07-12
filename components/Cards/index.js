@@ -24,17 +24,20 @@ axios
   .get(`https://lambda-times-backend.herokuapp.com/articles`)
   .then(articles => {
     // if successful
-    console.log("Articles: ", articles);
-    articles.data.articles.javascript.forEach(article => {
-      const newCard = createCard(article);
-      cardsContainer.appendChild(newCard);
-    });
+    for (const key in articles.data.articles) {
+      console.log("Keys: ", key);
+
+      articles.data.articles[key].forEach(topic => {
+        const newCard = createCard(topic);
+        cardsContainer.appendChild(newCard);
+      });
+    }
   })
   .catch(error => {
     console.log(error);
   });
 
-function createCard(article) {
+function createCard(topic) {
   // create elements
   const card = document.createElement("div");
   const headline = document.createElement("div");
@@ -50,9 +53,9 @@ function createCard(article) {
   imgContainer.classList.add("img-container");
 
   // set content
-  headline.textContent = article.headline;
-  img.src = article.authorPhoto;
-  byline.textContent = `By ${article.authorName}`;
+  headline.textContent = topic.headline;
+  img.src = topic.authorPhoto;
+  byline.textContent = `By ${topic.authorName}`;
 
   // set structure
   card.appendChild(headline);
