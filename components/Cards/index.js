@@ -25,10 +25,8 @@ axios
   .then(articles => {
     // if successful
     for (const key in articles.data.articles) {
-      console.log("Keys: ", key);
-
       articles.data.articles[key].forEach(topic => {
-        const newCard = createCard(topic);
+        const newCard = createCard(topic, key);
         cardsContainer.appendChild(newCard);
       });
     }
@@ -37,7 +35,7 @@ axios
     console.log(error);
   });
 
-function createCard(topic) {
+function createCard(topic, key) {
   // create elements
   const card = document.createElement("div");
   const headline = document.createElement("div");
@@ -56,6 +54,7 @@ function createCard(topic) {
   headline.textContent = topic.headline;
   img.src = topic.authorPhoto;
   byline.textContent = `By ${topic.authorName}`;
+  card.setAttribute("data-tab", key);
 
   // set structure
   card.appendChild(headline);
