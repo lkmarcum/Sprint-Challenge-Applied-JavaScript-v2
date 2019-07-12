@@ -53,4 +53,13 @@ function createCard(article) {
   headline.textContent = article.headline;
   img.src = article.authorPhoto;
   byline.textContent = `By ${article.authorName}`;
+
+  // set structure
+  card.appendChild(headline);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  author.appendChild(byline);
+  imgContainer.appendChild(img);
+
+  return card;
 }
