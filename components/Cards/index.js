@@ -26,4 +26,10 @@ function createCard(article) {
   const imgContainer = document.createElement("div");
   const img = document.createElement("img");
   const byline = document.createElement("span");
+
+  // set classes
+  card.classList.add("card");
+  headline.classList.add("headline");
+  author.classList.add("author");
+  imgContainer.classList.add("img-container");
 }
