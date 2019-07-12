@@ -10,6 +10,15 @@
 
 const topics = document.querySelector(".topics");
 
+const allTab = document.createElement("div");
+allTab.classList.add("tab");
+allTab.textContent = "ALL";
+allTab.setAttribute("data-tab", "all");
+allTab.addEventListener("click", event => {
+  selectTab(allTab.dataset.tab);
+});
+topics.appendChild(allTab);
+
 axios
   .get(`https://lambda-times-backend.herokuapp.com/topics`)
   .then(tabs => {
@@ -25,6 +34,22 @@ axios
     console.log(error);
   });
 
+function selectTab(data) {
+  const cards = document.querySelectorAll(".card");
+  if (data === "all") {
+    cards.forEach(card => {
+      card.style.display = "flex";
+    });
+  } else {
+    cards.forEach(card => {
+      card.style.display = "none";
+      if (card.dataset.tab === data) {
+        card.style.display = "flex";
+      }
+    });
+  }
+}
+
 function createTab(topic) {
   // create element
   const madeTab = document.createElement("div");
@@ -36,7 +61,9 @@ function createTab(topic) {
   madeTab.textContent = topic;
   madeTab.setAttribute("data-tab", topic);
 
-  console.log(madeTab);
+  madeTab.addEventListener("click", event => {
+    selectTab(event.target.dataset.tab);
+  });
 
   return madeTab;
 }
