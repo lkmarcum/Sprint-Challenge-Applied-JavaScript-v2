@@ -234,6 +234,7 @@ body {
   width: 380px;
   margin-bottom: 16px;
   padding: 24px;
+  animation: fadeIn 1s;
 }
 .cards-container .card .headline {
   font-size: 25px;
