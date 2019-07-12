@@ -15,7 +15,7 @@ axios
   .then(tabs => {
     // if successful
     console.log("Tab topics: ", tabs);
-    tabs.forEach(topic => {
+    tabs.data.topics.forEach(topic => {
       const newTab = createTab(topic);
       topics.appendChild(newTab);
     });
@@ -24,3 +24,16 @@ axios
     // if failed
     console.log(error);
   });
+
+function createTab(topic) {
+  // create element
+  const madeTab = document.createElement("div");
+
+  // set class
+  madeTab.classList.add("tab");
+
+  // set content
+  madeTab.textContent = topic;
+
+  return madeTab;
+}
