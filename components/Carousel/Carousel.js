@@ -32,4 +32,12 @@ function createCarousel() {
   carousel.classList.add("carousel");
   left.classList.add("left-button");
   right.classList.add("right-button");
+
+  // set content
+  left.textContent = "<";
+  img1.src = "../assets/carousel/computer.jpeg";
+  img2.src = "../assets/carousel/mountains.jpeg";
+  img3.src = "../assets/carousel/trees.jpeg";
+  img4.src = "../assets/carousel/turntable.jpeg";
+  right.textContent = ">";
 }
