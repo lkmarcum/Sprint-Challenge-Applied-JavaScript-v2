@@ -18,6 +18,10 @@
   </div>
 */
 
+const carouselContainer = document.querySelector(".carousel-container");
+const newCarousel = createCarousel();
+carouselContainer.appendChild(newCarousel);
+
 function createCarousel() {
   // create elements
   const carousel = document.createElement("div");
@@ -35,9 +39,21 @@ function createCarousel() {
 
   // set content
   left.textContent = "<";
-  img1.src = "../assets/carousel/computer.jpeg";
-  img2.src = "../assets/carousel/mountains.jpeg";
-  img3.src = "../assets/carousel/trees.jpeg";
-  img4.src = "../assets/carousel/turntable.jpeg";
+  img1.src = "./assets/carousel/computer.jpeg";
+  img2.src = "./assets/carousel/mountains.jpeg";
+  img3.src = "./assets/carousel/trees.jpeg";
+  img4.src = "./assets/carousel/turntable.jpeg";
   right.textContent = ">";
+
+  // set structure
+  carousel.appendChild(left);
+  carousel.appendChild(img1);
+  carousel.appendChild(img2);
+  carousel.appendChild(img3);
+  carousel.appendChild(img4);
+  carousel.appendChild(right);
+
+  console.log(carousel);
+
+  return carousel;
 }
