@@ -60,6 +60,9 @@ function createTab(topic) {
   // set content
   madeTab.textContent = topic;
   madeTab.setAttribute("data-tab", topic);
+  if (madeTab.dataset.tab === "node.js") {
+    madeTab.setAttribute("data-tab", "node");
+  }
 
   madeTab.addEventListener("click", event => {
     selectTab(event.target.dataset.tab);
