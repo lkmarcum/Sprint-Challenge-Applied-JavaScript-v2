@@ -50,5 +50,7 @@ function createCard(article) {
   imgContainer.classList.add("img-container");
 
   // set content
-  //   headline.textContent = article.data
+  headline.textContent = article.headline;
+  img.src = article.authorPhoto;
+  byline.textContent = `By ${article.authorName}`;
 }
