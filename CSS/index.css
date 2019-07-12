@@ -301,6 +301,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 10;
 }
 .carousel .right-button {
   top: 50%;
@@ -310,4 +311,14 @@ body {
 .carousel img {
   width: 100%;
   display: none;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
